@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement Criteria Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Placement Criteria Management</h1>
+
+        <!-- Create Placement Form -->
+        <h2>Create Placement</h2>
+        <form id="createPlacementForm">
+            <label for="companyName">Company Name:</label>
+            <input type="text" id="companyName" required>
+            <label for="minPercentage">Minimum Percentage:</label>
+            <input type="number" id="minPercentage" required>
+            <label for="skills">Required Skills:</label>
+            <input type="text" id="skills" required>
+            <button type="submit">Create Placement</button>
+        </form>
+
+        <hr>
+
+        <!-- Display All Placements -->
+        <h2>All Placements</h2>
+        <ul id="placementsList"></ul>
+
+        <hr>
+
+        <!-- Update Placement -->
+        <h2>Update Placement</h2>
+        <form id="updatePlacementForm">
+            <label for="updateId">Placement ID:</label>
+            <input type="number" id="updateId" required>
+            <label for="updateCompanyName">Company Name:</label>
+            <input type="text" id="updateCompanyName" required>
+            <label for="updateMinPercentage">Minimum Percentage:</label>
+            <input type="number" id="updateMinPercentage" required>
+            <label for="updateSkills">Required Skills:</label>
+            <input type="text" id="updateSkills" required>
+            <button type="submit">Update Placement</button>
+        </form>
+
+        <hr>
+
+        <!-- Delete Placement -->
+        <h2>Delete Placement</h2>
+        <form id="deletePlacementForm">
+            <label for="deleteId">Placement ID:</label>
+            <input type="number" id="deleteId" required>
+            <button type="submit">Delete Placement</button>
+        </form>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
