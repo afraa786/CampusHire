@@ -26,7 +26,7 @@ public class StudentController {
     private Studentservice studentService;
 
     // GET: /students - Get all students
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<List<Student>> getAllStudents() {
         List<Student> students = studentService.getAllStudents();
         return new ResponseEntity<>(students, HttpStatus.OK);
@@ -68,12 +68,11 @@ public class StudentController {
 
     // DELETE: /students/{id} - Delete a student by ID
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteStudent(@PathVariable Long id) {
-        Optional<Student> student = studentService.findById(id);
-        if (student.isPresent()) {
-            studentService.deleteById(id);
-            return ResponseEntity.noContent().build(); // Successful deletion
+    public ResponseEntity<Boolean> deleteStudent(@PathVariable Long id) {
+        boolean isDeleted = studentService.deleteById(id);
+        if (isDeleted) {
+            return ResponseEntity.noContent().build(); // 204 No Content for successful deletion
         }
-        return ResponseEntity.notFound().build(); // Return 404 if student not found
+        return ResponseEntity.notFound().build(); // 404 Not Found if student does not exist
     }
 }

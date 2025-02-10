@@ -3,9 +3,9 @@ package placement.college.management;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
-import java.util.List;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
+import java.math.BigDecimal;
 
 @Data
 @Entity
@@ -39,13 +39,15 @@ public class Company {
     @Min(value = 1, message = "Openings must be at least 1")
     private Integer openings;
 
-    private String minCtc;
-    private String maxCtc;
+    @DecimalMin(value = "0.0", message = "Minimum CTC must be positive", inclusive = false)
+    private BigDecimal minCtc;
+
+    @DecimalMin(value = "0.0", message = "Maximum CTC must be positive", inclusive = false)
+    private BigDecimal maxCtc;
+
     private String phone;
 
-    // Many-to-Many Relationship
-    @OneToOne
-    @JoinColumn(name = "placementCriteria", unique = true) // Ensures each company gets only one placement criteria
+    @ManyToOne
+    @JoinColumn(name = "placement_criteria_id", nullable = false)
     private Placementcriteria placementCriteria;
-
 }

@@ -8,8 +8,10 @@ placement\college\management\CompanyServiceImpl.class
 placement\college\management\CompanyRepository.class
 placement\college\management\StudentController.class
 placement\college\management\Placementserviceimpl.class
+placement\college\management\CorsConfig$1.class
 placement\college\management\Placementrepository.class
 placement\college\management\Student.class
+placement\college\management\CorsConfig.class
 placement\college\management\Company.class
 placement\college\management\Controller.class
 placement\college\management\CompanyService.class

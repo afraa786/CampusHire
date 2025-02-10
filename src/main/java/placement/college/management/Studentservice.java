@@ -6,7 +6,6 @@ import java.util.Optional;
 
 public interface Studentservice {
 
-
     List<Student> getAllStudents(); 
     
     // Find a student by ID

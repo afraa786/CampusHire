@@ -41,6 +41,11 @@ public class Student {
     @Pattern(regexp = "\\d{10}", message = "Phone number must be 10 digits")
     @NotBlank(message = "Phone number is required")
     private String phone;
+
+    @ManyToOne
+@JoinColumn(name = "placement_criteria_id", nullable = false)
+private Placementcriteria placementCriteria;
+
     
     public Long getId() {
         return id;
