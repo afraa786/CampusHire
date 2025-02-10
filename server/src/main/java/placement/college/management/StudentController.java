@@ -28,7 +28,7 @@ public class StudentController {
     // GET: /students - Get all students
     @GetMapping
     public ResponseEntity<List<Student>> getAllStudents() {
-        List<Student> students = studentService.getAllStudents();
+        List<Student> students = studentService.findAll();
         return new ResponseEntity<>(students, HttpStatus.OK);
     } 
 

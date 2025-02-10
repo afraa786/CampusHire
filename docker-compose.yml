@@ -1,0 +1,17 @@
+services:
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: springboot-server
+    volumes:
+      - ./server:/app
+    ports:
+      - "8080:8080"
+    networks:
+      - campus
+
+
+networks:
+  campus:
+    driver: bridge
