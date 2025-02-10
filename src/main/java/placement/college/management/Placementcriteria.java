@@ -1,7 +1,9 @@
 package placement.college.management;
 
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.AllArgsConstructor;
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -13,12 +15,14 @@ import jakarta.validation.constraints.*;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "placement_criteria") // Optional: Specify table name
-public class Placementcriteria {
-
+@Getter
+@Setter
+@Table(name = "placement_criteria")
+public class Placementcriteria {  // Fixed class name
+ 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id; // Primary key
+    private Long id;
 
     @NotBlank(message = "Criteria is required")
     private String criteria;
@@ -37,31 +41,22 @@ public class Placementcriteria {
 
     private String branch;
 
-    @DecimalMin(value = "0.0", message = "CGPA must be positive")
+    @DecimalMin(value = "0.0", message = "CGPA must be positive", inclusive = false)
     private Double cgpa;
 
-    @DecimalMin(value = "0.0", message = "Tenth percentage must be positive")
+    @DecimalMin(value = "0.0", message = "Tenth percentage must be positive", inclusive = false)
     private Double tenth;
 
-    @DecimalMin(value = "0.0", message = "Twelfth percentage must be positive")
+    @DecimalMin(value = "0.0", message = "Twelfth percentage must be positive", inclusive = false)
     private Double twelfth;
 
     private Double diploma;
 
-    @Column(nullable = false, columnDefinition = "int default 0")
     private Integer backlog = 0;
-
     private Integer gap = 0;
-
     private Integer activeBacklog = 0;
 
-    // Many-to-Many Relationship
-    @OneToOne(mappedBy = "placementCriteria") 
+    @OneToMany(mappedBy = "placementCriteria", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Company> companies;
 
-    public void setId(Long id) {
-        if (this.id != null) {
-            throw new UnsupportedOperationException("ID is auto-generated and cannot be changed.");
-        }
-    }
 }

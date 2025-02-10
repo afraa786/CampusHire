@@ -13,7 +13,7 @@ public class Studentserviceimpl implements Studentservice {
     private Studentrepository studentRepository;
 
     @Override
-    public List<Student> findAll() {
+    public List<Student> getAllStudents() {
         return studentRepository.findAll();
     }
 
@@ -31,19 +31,19 @@ public class Studentserviceimpl implements Studentservice {
     public Student updateById(Long id, Student student) {
         if (studentRepository.existsById(id)) {
             student.setId(id); // Ensure ID consistency
-            return studentRepository.save(student);
+            return studentRepository.save(student); // Save updated student
         }
-        return null; // Or throw an exception
+        throw new RuntimeException("Student not found with ID: " + id); // Exception handling
     }
 
     @Override
     public boolean deleteById(Long id) {
         if (studentRepository.existsById(id)) {
             studentRepository.deleteById(id);
-            return true;
+            return true;  // Indicate successful deletion
         }
-        return false;
+        return false;  // Indicate failure if student does not exist
     }
-}
+    
 
-
+    }
