@@ -13,7 +13,7 @@ public class CorsConfig {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/api/**") // Apply to all "/api/" endpoints
                         .allowedOrigins("http://localhost:5174") // Update port
-                        .allowedMethods("GET", "POST", "PUT", "DELETE")
+                        .allowedMethods("GET", "POST", "PUT", "DELETE","PATCH")
                         .allowedHeaders("*");
             }
         };
