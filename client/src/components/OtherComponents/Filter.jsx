@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 function HoverDiv() {
   const [isParentHovered, setIsParentHovered] = useState(false);
   const [isChildHovered, setIsChildHovered] = useState(false);
+  
   const [Colora1, setColora1] = useState('white')
   const [Colora2, setColora2] = useState('white')
   const [Colora3, setColora3] = useState('white')
@@ -85,7 +86,7 @@ function HoverDiv() {
             onHoverEnd={() => setIsChildHovered(false)}
           >  
             <div className=' flex flex-col w-full justify-center items-center '>
-              <h1>Filter</h1>
+              <h1 className=' font-mono font-black text-2xl'>Filter</h1>
               <div className='age w-full bg-white text-black  flex h-8 justify-center items-center mt-1 rounded-2xl'>
                 <p className=' ages bg-zinc-500 ml-4 mr-4 font-mono text-base hover:bg-blue-400 px-2 rounded-3xl'>
                   Age:

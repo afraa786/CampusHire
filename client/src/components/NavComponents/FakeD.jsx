@@ -2,6 +2,7 @@ export const AppliedData=[
   {
     "activeBacklog": 0,
     "backlog": 0,
+    "name":"Muntaha",
     "branch": "Mechanical Engineering",
     "cgpa": 7.2,
     "companies": [],
@@ -19,6 +20,7 @@ export const AppliedData=[
   {
     "activeBacklog": 0,
     "backlog": 0,
+    "name":"Fareed",
     "branch": "Electrical Engineering",
     "cgpa": 7.8,
     "companies": [],
@@ -36,6 +38,7 @@ export const AppliedData=[
   {
     "activeBacklog": 0,
     "backlog": 0,
+    "name":"Afraa",
     "branch": "Information Technology",
     "cgpa": 8.1,
     "companies": [],
@@ -53,6 +56,7 @@ export const AppliedData=[
   {
     "activeBacklog": 0,
     "backlog": 0,
+    "name":"Jhon Doe",
     "branch": "Civil Engineering",
     "cgpa": 7.5,
     "companies": [],
@@ -70,6 +74,7 @@ export const AppliedData=[
   {
     "activeBacklog": 0,
     "backlog": 0,
+    "name":"Steven Thompson",
     "branch": "Electronics & Communication",
     "cgpa": 8.2,
     "companies": [],
@@ -87,6 +92,7 @@ export const AppliedData=[
   {
     "activeBacklog": 0,
     "backlog": 0,
+    "name":"Eddie Gurero",
     "branch": "Chemical Engineering",
     "cgpa": 7.4,
     "companies": [],

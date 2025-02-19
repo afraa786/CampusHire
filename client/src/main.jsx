@@ -4,7 +4,6 @@ import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import HrPage from './components/Homepages/HrPage'
 import CreatePost from './components/OtherComponents/CreatePost'
-import Testing from './components/OtherComponents/Filter'
 
 const router = createBrowserRouter([
     {

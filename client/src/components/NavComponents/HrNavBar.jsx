@@ -83,8 +83,8 @@ const HrNavBar = () => {
       </div>
 
       <div className='text-white flex'>
-      <p className=' hover:text-blue-400 cursor-pointer px-3 py-1.5'>Sign up</p>
-      <p className=' signLog hover:text-blue-400 cursor-pointer px-3 py-1.5'>Log in</p>
+      <p className=' hover:text-blue-600 cursor-pointer px-3 py-1.5'>Sign up</p>
+      <p className=' signLog hover:text-blue-600 cursor-pointer px-3 py-1.5'>Log in</p>
       <img src={UserIcon} className='h-10 rounded-full' alt="" />
       </div>
     </nav>

@@ -3,7 +3,6 @@ import { AppliedData } from '../NavComponents/FakeD'
 import Testing from './Filter'
 
 const CreatePost = () => {
-     console.log(AppliedData)
   
   return (
     <div >

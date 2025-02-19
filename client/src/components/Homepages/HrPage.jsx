@@ -2,10 +2,11 @@ import React,{useContext,useState} from 'react'
 import { DataContext } from '@/App'
 import HrNavBar from '../NavComponents/HrNavBar'
 import CreatePost from '../OtherComponents/CreatePost'
+import ViewEpost from '../OtherComponents/ViewEpost'
+
 const HrPage = () => {
 
   const newData=useContext(DataContext)
-  console.log(newData)
 
   return (
     <div className='bigone h-screen w-screen bg-black'>
@@ -22,6 +23,7 @@ const HrPage = () => {
         <div className=' w-[48vw] h-[66.5vh] flex justify-center items-center'>
         <div className=' w-[45vw]  h-[66.5vh] '>
           {/* Here comes View existing post */}
+          <ViewEpost/>
         </div>
         </div>
         </div>
