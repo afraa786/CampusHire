@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: placement.college.management.DemoApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.72 s - in placement.college.management.DemoApplicationTests

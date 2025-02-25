@@ -2,6 +2,7 @@ package placement.college.management;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,7 +16,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import jakarta.validation.Valid;
 
 @RestController
@@ -40,7 +40,7 @@ public class StudentController {
     }
 
     // POST: /students - Create a new student
-    @PostMapping
+    @PostMapping("create-student")
     public ResponseEntity<Student> createStudent(@Valid @RequestBody Student student, BindingResult result) {
         if (result.hasErrors()) {
             return ResponseEntity.badRequest().body(null); // You can add error details here
@@ -74,5 +74,36 @@ public class StudentController {
             return ResponseEntity.noContent().build(); // 204 No Content for successful deletion
         }
         return ResponseEntity.notFound().build(); // 404 Not Found if student does not exist
+    }
+
+    // Student registration
+    @PostMapping("/register")
+    public ResponseEntity<Student> registerStudent(@RequestBody Student student) {
+        return new ResponseEntity<>(studentService.registerStudent(student), HttpStatus.CREATED);
+    }
+
+    // Student login
+    @PostMapping("/login")
+    public ResponseEntity<String> loginStudent(@RequestBody Map<String, String> loginData) {
+        String email = loginData.get("email");
+        String password = loginData.get("password");
+
+        Optional<Student> student = studentService.login(email, password);
+        return student.map(value -> ResponseEntity.ok("Login successful!"))
+                      .orElseGet(() -> ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials"));
+    }
+
+    // Student deletes their own account
+    @DeleteMapping("Self-deletion/{id}")
+    public ResponseEntity<String> deleteOwnAccount(@PathVariable Long id) {
+        studentService.deleteOwnAccount(id);
+        return ResponseEntity.ok("Your account has been deleted.");
+    }
+
+    // Admin deletes any student account
+    @DeleteMapping("/admin/{id}")
+    public ResponseEntity<String> deleteStudentByAdmin(@PathVariable Long id) {
+        studentService.deleteStudentByAdmin(id);
+        return ResponseEntity.ok("Student deleted by admin.");
     }
 }

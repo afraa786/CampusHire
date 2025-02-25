@@ -7,4 +7,6 @@ public interface CompanyService {
     List<Company> getAllCompanies();
     Company getCompanyById(Long id);
     void deleteCompany(Long id);
+    Company updateCompany(Long id, Company company);
+    List<Student> getEligibleStudents(Long companyId);
 }
