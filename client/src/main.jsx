@@ -4,6 +4,8 @@ import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import HrPage from './components/Homepages/HrPage'
 import CreatePost from './components/OtherComponents/CreatePost'
+import Login from './Auth/Login'
+import Signup from './Auth/Signup'
 
 const router = createBrowserRouter([
     {
@@ -14,6 +16,14 @@ const router = createBrowserRouter([
         path: '/post',
         element: <CreatePost />,
     },
+    {
+        path:"/Login",
+        element:<Login/>,
+    },
+    {
+        path:"/Signup",
+        element:<Signup/>
+    }
 ])
 
 createRoot(document.getElementById('root')).render(
