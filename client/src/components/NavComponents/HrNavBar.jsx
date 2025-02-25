@@ -28,7 +28,7 @@ const HrNavBar = () => {
       <div className=' flex flex-wrap '>
         <img src={MenuIcon} className='hamburger hidden h-11 px-3 mr-4 hover:cursor-pointer' alt="" />
       <div className=' font-mono font-extrabold text-xl px-4 py-1 bg-white text-black rounded-xl flex justify-center items-center hover:cursor-pointer'>
-        <p>LOGO</p>
+        <p>LOGO1 </p> 
       </div>
 
       <div className='nextTologo flex flex-wrap'>
