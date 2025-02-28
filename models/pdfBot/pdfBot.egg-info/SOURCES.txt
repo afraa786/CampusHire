@@ -1,0 +1,17 @@
+setup.py
+config/__init__.py
+config/core.py
+pdfBot.egg-info/PKG-INFO
+pdfBot.egg-info/SOURCES.txt
+pdfBot.egg-info/dependency_links.txt
+pdfBot.egg-info/requires.txt
+pdfBot.egg-info/top_level.txt
+src/__init__.py
+src/embedding.py
+src/llm.py
+src/parser.py
+src/prompt_template.py
+src/retrieve_qa.py
+src/vectordb.py
+streamlit_app/__init__.py
+streamlit_app/utils.py

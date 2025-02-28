@@ -1,0 +1,16 @@
+services:
+  rag :
+    build :
+      context : .
+      dockerfile: Dockerfile
+    container_name: rag_api
+    volumes :
+      - .:/app
+    ports:
+      - "8000:8000"
+    networks :
+      - rag_network
+
+networks:
+  rag_network:
+    driver: bridge
