@@ -16,6 +16,7 @@ import jakarta.validation.constraints.NotBlank;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 
 public class Admin {
     @Id
