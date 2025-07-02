@@ -9,4 +9,5 @@ React – Interactive and dynamic user interface
 PostgreSQL – Reliable and structured data storage
 REST APIs – Seamless integration between system components
 
+
 CampusHire simplifies campus placements by enabling companies to set criteria, manage job postings, and connect with eligible students effortlessly. 🚀
